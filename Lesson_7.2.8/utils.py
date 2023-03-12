@@ -62,6 +62,7 @@ def parse_input(user_input):
 
 #    return selected, question
 def print_question(question_text):
+    print(f"Слово {question_text} в переводе означает ...")
 
 
 def show_stats():
