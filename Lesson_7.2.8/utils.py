@@ -65,7 +65,12 @@ def print_question(question_text):
     print(f"Слово {question_text} в переводе означает ...")
 
 
-def show_stats():
+def show_stats(points, correct, incorrect):
     """Выводит статистику"""
 
-    return None
+    print("У нас закончились вопросы!")
+    print("")
+    print(f"Ваш счёт: {points}")
+    print(f"Верных ответов: {correct}")
+    print(f"Неверных ответов: {incorrect}")
+show_stats(100, 1, 2)
