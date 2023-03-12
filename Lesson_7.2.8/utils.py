@@ -5,7 +5,8 @@ def load_questions():
     """Загружает вопросы из файла"""
 
     with open(file="questions.json", mode="r", encoding="utf-8") as fp:
-        return json.load(fp)
+        questions_dict = json.load(fp)
+        return questions_dict
 #print(type(load_questions()))
 #print(load_questions())
 
@@ -14,13 +15,11 @@ def show_field():
     """Выводит игровое поле"""
 
     table = ""
-    with open(file="questions.json", mode="r", encoding="utf-8") as fp:
-        questions_dict = json.load(fp)
-        for k, v in questions_dict.items():
-            score_str_with_spaces = "   ".join([i for i in v.keys()])
-            table += f"{k}   {score_str_with_spaces}\n"
+    for k, v in load_questions().items():
+        score_str_with_spaces = "   ".join([i for i in v.keys()])
+        table += f"{k}   {score_str_with_spaces}\n"
     return table
-#print(show_field())
+print(show_field())
 
 
 def parse_input(string):
