@@ -49,7 +49,10 @@ def parse_input(user_input):
     user_data = user_input.split(" ")
     if len(user_data) != 2:
         return False
-    # ... всякая валидация
+    if not user_data[0].isalpha():
+        return False
+    if not user_data[1].isdigit():
+        return False
     return {"category": user_data[0], "price": user_data[1]}
 #print(parse_input("Животные 100"))
 
@@ -75,7 +78,6 @@ def show_stats(points, correct, incorrect):
     print(f"Ваш счёт: {points}")
     print(f"Верных ответов: {correct}")
     print(f"Неверных ответов: {incorrect}")
-#show_stats(100, 1, 2)
 
 
 def save_results_to_file(points, correct, incorrect):
@@ -83,7 +85,20 @@ def save_results_to_file(points, correct, incorrect):
 
     with open(file="results.json", mode="r", encoding="utf-8") as file:
         results = json.load(file)
-        results.append({"points": points, "correct": correct, "incorrect": incorrect})
+
+    results.append({
+        "points": points,
+        "correct": correct,
+        "incorrect": incorrect
+    })
+
     with open(file="results.json", mode="w", encoding="utf-8") as file:
         results = json.dump(results, file)
-#save_results_to_file(0, 0, 0)
+
+
+def get_number_of_questions(questions):
+    """Получает общее количество вопросов"""
+    counter = 0
+    for cat_questions in questions.values():
+        counter += len(cat_questions)
+    return counter
