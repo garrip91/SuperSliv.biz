@@ -10,8 +10,8 @@ import json
 def load_questions_from_json():
     """Загружает вопросы из файла"""
 
-    with open(file="questions.json", mode="r", encoding="utf-8") as fp:
-        data = json.load(fp)
+    with open(file="questions.json", mode="r", encoding="utf-8") as file:
+        data = json.load(file)
         return data
 
 
@@ -62,6 +62,8 @@ def parse_input(user_input):
 
 #    return selected, question
 def print_question(question_text):
+    """Печатает вопрос"""
+
     print(f"Слово {question_text} в переводе означает ...")
 
 
@@ -73,4 +75,15 @@ def show_stats(points, correct, incorrect):
     print(f"Ваш счёт: {points}")
     print(f"Верных ответов: {correct}")
     print(f"Неверных ответов: {incorrect}")
-show_stats(100, 1, 2)
+#show_stats(100, 1, 2)
+
+
+def save_results_to_file(points, correct, incorrect):
+    """Записывает результаты в JSON-файл"""
+
+    with open(file="results.json", mode="r", encoding="utf-8") as file:
+        results = json.load(file)
+        results.append({"points": points, "correct": correct, "incorrect": incorrect})
+    with open(file="results.json", mode="w", encoding="utf-8") as file:
+        results = json.dump(results, file)
+#save_results_to_file(0, 0, 0)
