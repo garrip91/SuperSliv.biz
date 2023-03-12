@@ -7,8 +7,6 @@ import json
 #    with open(file="questions.json", mode="r", encoding="utf-8") as fp:
 #        questions_dict = json.load(fp)
 #        return questions_dict
-#print(type(load_questions()))
-#print(load_questions())
 def load_questions_from_json():
     """Загружает вопросы из файла"""
 
@@ -25,7 +23,6 @@ def load_questions_from_json():
 #        score_str_with_spaces = "   ".join([i for i in v.keys()])
 #        table += f"{k}   {score_str_with_spaces}\n"
 #    return table
-#print(show_field())
 def show_field(questions):
     """Выводит игровое поле"""
 
@@ -38,25 +35,33 @@ def show_field(questions):
             else:
                 print("   ".ljust(5), end=" ")
         print()
-questions = load_questions_from_json()
-show_field(questions)
+#questions = load_questions_from_json()
+#show_field(questions)
 
 
-def parse_input(string):
+#def parse_input(string):
+#    """Делит ввод пользователя на категорию и число"""
+
+#    return string.split(" ")
+def parse_input(user_input):
     """Делит ввод пользователя на категорию и число"""
 
-    return string.split(" ")
-#print(parse_input("Транспорт 400"))
+    user_data = user_input.split(" ")
+    if len(user_data) != 2:
+        return False
+    # ... всякая валидация
+    return {"category": user_data[0], "price": user_data[1]}
+#print(parse_input("Животные 100"))
 
 
-def show_question(parse_input_data):
-    """Печатает вопрос"""
+#def show_question(parse_input_data):
+#    """Печатает вопрос"""
 
-    selected = load_questions()[parse_input_data[0]][parse_input_data[1]]
-    question = f"Слово {selected['question']} в переводе означает ..."
+#    selected = load_questions()[parse_input_data[0]][parse_input_data[1]]
+#    question = f"Слово {selected['question']} в переводе означает ..."
 
-    return selected, question
-#print(show_question()
+#    return selected, question
+def print_question(question_text):
 
 
 def show_stats():
