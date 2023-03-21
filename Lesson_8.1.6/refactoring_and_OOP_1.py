@@ -21,6 +21,7 @@ class Hero:
 
 
 hero = Hero(400)
+
 print(hero.can_i_buy(350))
 print(hero.can_i_buy(250))
 print(hero.can_i_buy(550))

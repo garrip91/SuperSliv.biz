@@ -11,8 +11,13 @@ class Hero:
 
 
 hero = Hero()
+hero1 = Hero()
+hero2 = Hero()
+hero3 = Hero()
 
 hero.go_right()
+hero1.go_left()
+
 hero.go_left()
 hero.go_left()
 hero.go_left()
