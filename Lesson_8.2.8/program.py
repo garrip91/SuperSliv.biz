@@ -8,7 +8,7 @@ class Question:
         self.user_answer = user_answer
         self.scores = scores
     
-    def get_points(self):
+    def get_points(self) -> int:
         """
         Возвращает int, количество баллов.
         Баллы зависят от сложности: за 1 даётся 10 баллов, за 5 даётся 50 баллов.
