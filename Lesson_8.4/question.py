@@ -9,10 +9,10 @@ class Question:
         self.points = self.question_level * 10
 
     def get_points(self):
-        pass
+        return self.points
 
     def is_correct(self):
-        pass
+        return self.user_answer == self.question_answer
 
     def build_question(self):
         pass
