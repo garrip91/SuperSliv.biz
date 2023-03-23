@@ -15,7 +15,7 @@ class Question:
         return self.user_answer == self.question_answer
 
     def build_question(self):
-        answer_text = f"Вопрос: {self.question_text}\nСложность: {self.question_level}/5"
+        answer_text = f"\nВопрос: {self.question_text}\nСложность: {self.question_level}/5"
         return answer_text
 
     def build_positive_feedback(self):
@@ -25,6 +25,9 @@ class Question:
     def build_negative_feedback(self):
         answer_text = f"Ответ неверный, верный ответ - {self.question_answer} !"
         return answer_text
+    
+    def __repr__(self):
+        return f"{self.question_text} - {self.question_answer} ({self.question_level}/5)"
 
 
 # data = {
