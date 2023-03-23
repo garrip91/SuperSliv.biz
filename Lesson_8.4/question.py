@@ -1,6 +1,6 @@
 class Question:
 
-    def __init__(self):
+    def __init__(self, question_text, question_level, question_answer):
         pass
 
     def get_points(self):
