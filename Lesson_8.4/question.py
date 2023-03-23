@@ -15,10 +15,12 @@ class Question:
         return self.user_answer == self.question_answer
 
     def build_question(self):
-        pass
+        answer_text = f"Вопрос: {self.question_text}\nСложность: {self.question_level}/5"
+        return answer_text
 
     def build_positive_feedback(self):
-        pass
+        answer_text = f"Ответ верный, получено {self.points} баллов!"
+        return answer_text
 
     def build_negative_feedback(self):
         pass
