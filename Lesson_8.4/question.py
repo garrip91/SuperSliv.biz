@@ -23,4 +23,24 @@ class Question:
         return answer_text
 
     def build_negative_feedback(self):
-        pass
+        answer_text = f"Ответ неверный, верный ответ - {self.question_answer} !"
+        return answer_text
+
+
+# data = {
+#     "q": "How many days do we have in a week?",
+#     "d": "2",
+#     "a": "7"
+# }
+#
+# q_1 = Question(data.get("q"), int(data.get("d")), data.get("a"))
+# print(q_1.get_points())
+#
+# q_1.user_answer = data.get("a")
+# print(q_1.is_correct())
+#
+# print(q_1.build_question())
+#
+# print(q_1.build_positive_feedback())
+#
+# print(q_1.build_negative_feedback())
