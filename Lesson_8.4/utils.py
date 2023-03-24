@@ -29,7 +29,7 @@ def load_questions():
     return questions
 
 
-def count_correct_answers(questions):
+def correct_answers_count(questions):
     correct_counter = 0
     for question in questions:
         if question.is_correct():
@@ -37,12 +37,9 @@ def count_correct_answers(questions):
     return correct_counter
 
 
-def count_points(questions):
+def points_count(questions):
     points_counter = 0
     for question in questions:
         if question.is_correct():
             points_counter += question.get_points()
     return points_counter
-
-
-print(load_questions())

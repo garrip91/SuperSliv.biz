@@ -1,5 +1,5 @@
 from question import Question
-from utils import load_questions, count_correct_answers, count_points
+from utils import load_questions, correct_answers_count, points_count
 
 
 def main():
@@ -15,8 +15,8 @@ def main():
         else:
             print(question.build_negative_feedback())
 
-    correct_counter = count_correct_answers(questions)
-    points = count_points(questions)
+    correct_counter = correct_answers_count(questions)
+    points = points_count(questions)
     
     print(f"Вот и всё!")
     print(f"Вы правильно ответили на {correct_counter} вопроса из {len(questions)}")
