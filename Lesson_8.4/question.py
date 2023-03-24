@@ -15,16 +15,16 @@ class Question:
         return self.user_answer == self.question_answer
 
     def build_question(self):
-        answer_text = f"\nВопрос: {self.question_text}\nСложность: {self.question_level}/5"
-        return answer_text
+        question_text = f"\nВопрос: {self.question_text}\nСложность: {self.question_level}/5"
+        return question_text
 
     def build_positive_feedback(self):
-        answer_text = f"Ответ верный, получено {self.points} баллов!"
-        return answer_text
+        positive_reply_text = f"Ответ верный, получено {self.points} баллов!"
+        return positive_reply_text
 
     def build_negative_feedback(self):
-        answer_text = f"Ответ неверный, верный ответ - {self.question_answer} !"
-        return answer_text
+        negative_reply_text = f"Ответ неверный, верный ответ - {self.question_answer} !"
+        return negative_reply_text
     
     def __repr__(self):
         return f"{self.question_text} - {self.question_answer} ({self.question_level}/5)"
