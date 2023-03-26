@@ -1,1 +1,3 @@
-#
+class BasicWord:
+
+    pass
