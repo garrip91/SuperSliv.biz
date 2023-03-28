@@ -5,7 +5,7 @@ class BasicWord:
         self.sub_words = sub_words
     
     def has_subword(self, candidate): # ДОРАБОТАТЬ
-        return candidate              # МЕТОД
+        return candidate.lower()      # МЕТОД
     
     def count_subwords(self):         # ДОРАБОТАТЬ
         return 7                      # МЕТОД
