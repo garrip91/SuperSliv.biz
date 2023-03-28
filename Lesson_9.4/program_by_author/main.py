@@ -5,6 +5,7 @@ def main():
     
     main_word = load_random_word()
 
+    word = main_word["word"]
     print("Составьте 8 слов из слова ПИТОН")
 
     while game_is_on:
