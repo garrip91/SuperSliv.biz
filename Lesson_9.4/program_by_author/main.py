@@ -1,5 +1,17 @@
+from utils import load_random_word
+
+
 def main():
-    pass
+    
+    main_word = load_random_word()
+    
+    print("Введите слово")
+    user_input = input()
+
+    if main_word.has_subword(user_input):
+        print("Слово есть!")
+    else:
+        print("Слова нет!")
 
 
 if __name__ == "__main__":

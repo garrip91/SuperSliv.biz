@@ -11,4 +11,7 @@ def load_random_word():
         ]
     }
     word = BasicWord(data["word"], data["sub_words"])
-    print(word)
+    return word
+
+
+print(load_random_word())
