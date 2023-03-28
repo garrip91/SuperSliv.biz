@@ -8,4 +8,4 @@ class BasicWord:
         return True                   # МЕТОД
     
     def count_subwords(self):         # ДОРАБОТАТЬ
-        pass                          # МЕТОД
+        return 7                      # МЕТОД
