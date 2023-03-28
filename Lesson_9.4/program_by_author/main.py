@@ -3,10 +3,13 @@ from utils import load_random_word
 
 def main():
     
+    game_is_on = True
     main_word = load_random_word()
 
-    word = main_word["word"]
-    print("Составьте 8 слов из слова ПИТОН")
+    word = main_word.word
+    wordcount = main_word.count_subwords()
+
+    print(f"Составьте {wordcount} слов из слова {word}")
 
     while game_is_on:
     
