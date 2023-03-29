@@ -31,13 +31,21 @@ def main():
             if (user_input == "stop") or (user_input == "стоп"):
                 flag = False
                 break
+            elif len(user_input) < 3:
+                print("Слишком короткое слово!")
             else:
-                if word_and_subwords.has_subword(user_input):
-                    print("Верно!")
-                    correct_counter += 1
+                if player.has_used(user_input):
+                    print("Уже использовано!")
                 else:
-                    print("Неверно!")
+                    if word_and_subwords.has_subword(user_input):
+                        print("Верно!")
+                        correct_counter += 1
+                    else:
+                        print("Неверно!")
+                    player.add_word(user_input)
         flag = False
+    
+    print(f"Игра завершена, Вы угадали {correct_counter} слов!")
 
 
 if __name__ == "__main__":
