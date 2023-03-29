@@ -3,7 +3,7 @@ from utils import load_random_word
 
 def main():
     
-    game_is_on = True
+    flag = True
     main_word = load_random_word()
 
     word = main_word.word
@@ -11,7 +11,7 @@ def main():
 
     print(f"Составьте {wordcount} слов из слова {word}")
 
-    while game_is_on:
+    while flag:
     
         print("Введите слово")
         user_input = input()
