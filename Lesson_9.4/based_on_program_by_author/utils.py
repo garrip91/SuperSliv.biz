@@ -33,7 +33,8 @@ def load_random_word():
         ))
 
     random.shuffle(words_and_subwords)
-    return words_and_subwords
+    word = random.sample(words_and_subwords, 1)
+    return word
 
 
 #load_random_word()
