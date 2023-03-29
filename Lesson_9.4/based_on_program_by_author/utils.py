@@ -34,7 +34,8 @@ def load_random_word():
 
     random.shuffle(words_and_subwords)
     word = random.sample(words_and_subwords, 1)
-    return word[0].subwords_count(), word[0].word
+    #return word[0].subwords_count(), word[0].word
+    return word[0]
 
 
 #load_random_word()

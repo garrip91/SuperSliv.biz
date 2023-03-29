@@ -7,8 +7,8 @@ def main():
     flag = True
 
     word_and_subwords_tuple = load_random_word()
-    subwords_count = load_random_word()[0]
-    word = load_random_word()[-1]
+    subwords_count = load_random_word().subwords_count()
+    word = load_random_word().word
     print(subwords_count)
     print(word)
     #subwords_count = word_and_subwords_tuple.subwords_count()
@@ -21,11 +21,13 @@ def main():
         player = Player(username)
         print(f"Здравствуйте, {player.name}!")
         print(f"Составьте {subwords_count} слов из слова {word.upper()}")
+        print("Слова должны быть не короче 3 букв")
+        print('Чтобы закончить игру, угадайте все слова или введите слово "stop" и нажмите на "Enter"')
         
         print("Введите слово")
         user_input = input()
 
-        if main_word.has_subwords(user_input):
+        if word_and_subwords_tuple.has_subwords(user_input):
             print("Слово есть!")
         else:
             print("Слова нет!")
