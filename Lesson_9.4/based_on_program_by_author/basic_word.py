@@ -10,8 +10,11 @@ class BasicWord:
     def subwords_count(self):         # ДОРАБОТАТЬ
         return len(self.sub_words.split(", "))                      # МЕТОД
     
-    def __repr__(self):
-        return f"{self.word} содержит {self.subwords_count()} слов"
+    #def __repr__(self):
+    #    return f"Составьте {self.subwords_count()} слов из слова {self.word.upper()}"
+    
+    #def from_list_to_str(self):
+    #    pass
 
 
 #basic_word = BasicWord("питон", "пони, тон, ион, опт, пот, тип, топ, пион, понт")
