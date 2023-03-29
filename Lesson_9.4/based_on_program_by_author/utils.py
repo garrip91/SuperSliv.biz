@@ -6,18 +6,12 @@ from basic_word import BasicWord
 
 
 def load_random_word():
-    #path = WORDS_ON_GITHUB
-    #response = requests.get(WORDS_ON_GITHUB)
-    #print(response.text)
-
-    #data = {
-    #    "word": "набор",
-    #    "sub_words": [
-    #        "бар", "бон", "бор", "раб", "бра", "боа", "нора", "роба", "барон"
-    #    ]
-    #}
-    #word = BasicWord(data["word"], data["sub_words"])
-    #return word
+    """
+    Получает список слов с внешнего ресурса,
+    выбирает случайное слово,
+    создаёт экземпляр класса BasicWord,
+    возвращает созданный экземпляр.
+    """
     
     # Настраиваем подключение к базе данных:
     conn = sqlite3.connect('DATA.db')
