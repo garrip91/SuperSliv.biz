@@ -4,7 +4,7 @@ class Player:
         self.name = name
         self.used_words = []
     
-    def count_words(self):
+    def used_words_count(self):
         return len(self.used_words)
     
     def add_word(self, new_word):
@@ -24,6 +24,6 @@ vasily.add_word("Алтай")
 vasily.add_word("Борисполь")
 vasily.add_word("Вологда")
 #print(vasily)
-#print(vasily.count_words())
+#print(vasily.used_words_count())
 #print(vasily.has_used("пайтон"))
 #print(vasily.has_used("диван"))

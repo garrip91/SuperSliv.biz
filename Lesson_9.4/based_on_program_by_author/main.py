@@ -4,6 +4,7 @@ from player import Player
 
 def main():
     
+    correct_counter = 0
     flag = True
 
     while flag:
@@ -23,15 +24,20 @@ def main():
         print('Чтобы закончить игру, угадайте все слова или В ПРОЦЕССЕ ИГРЫ введите слово "stop" и нажмите на "Enter"')
         
         print("Поехали! Ваше первое слово:\n")
-        user_input = input()
+        #user_input = input()
 
-        if user_input == "stop":
-            break
-        else:
-            if word_and_subwords.has_subword(user_input):
-                print("Слово есть!")
+        while correct_counter < len(word_and_subwords.sub_words):
+            user_input = input()
+            if (user_input == "stop") or (user_input == "стоп"):
+                flag = False
+                break
             else:
-                print("Слова нет!")
+                if word_and_subwords.has_subword(user_input):
+                    print("Верно!")
+                    correct_counter += 1
+                else:
+                    print("Неверно!")
+        flag = False
 
 
 if __name__ == "__main__":
