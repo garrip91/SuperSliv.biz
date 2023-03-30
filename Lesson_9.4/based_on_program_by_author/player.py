@@ -18,15 +18,3 @@ class Player:
     
     def __repr__(self):
         return f"{self.name} угадал слова {', '.join(self.used_words)}"
-
-
-vasily = Player("Василий")
-vasily.add_word("пайтон")
-vasily.add_word("словарь")
-vasily.add_word("Алтай")
-vasily.add_word("Борисполь")
-vasily.add_word("Вологда")
-#print(vasily)
-#print(vasily.used_words_count())
-#print(vasily.has_used("пайтон"))
-#print(vasily.has_used("диван"))
