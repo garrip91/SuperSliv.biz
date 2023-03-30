@@ -28,7 +28,7 @@ class Question:
         question_text = f"\nВопрос: {self.question_text}\nСложность: {self.question_level}/5"
         return question_text
 
-    def build_positive_feedback(self):
+    def build_positive_feedback(self) -> str:
         """
         Возвращает:
         Ответ верный, получено __ баллов.
@@ -36,7 +36,7 @@ class Question:
         positive_reply_text = f"Ответ верный, получено {self.points} баллов!"
         return positive_reply_text
 
-    def build_negative_feedback(self):
+    def build_negative_feedback(self) -> str:
         """
         Возвращает:
         Ответ неверный, верный ответ - __.
