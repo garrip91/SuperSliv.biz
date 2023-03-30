@@ -14,7 +14,3 @@ class BasicWord:
     
     #def __repr__(self):
     #    return f"Составьте {self.subwords_count()} слов из слова {self.word.upper()}"
-
-
-#basic_word = BasicWord("питон", "пони, тон, ион, опт, пот, тип, топ, пион, понт")
-#print(basic_word.has_subword("123"))
