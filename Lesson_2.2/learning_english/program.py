@@ -15,7 +15,7 @@ while flag == False:
     start_input_value = input("Расскажи как тебя зовут:\n")
     if start_input_value:
         flag = True
-        print(F"Привет, ({start_input_value}), начинаем тренировку!")
+        print(f"Привет, ({start_input_value}), начинаем тренировку!")
 
 while (flag == True) and (questions_count < questions_and_answers_dict_len):
     for k,v in questions_and_answers_dict.items():
@@ -30,4 +30,4 @@ while (flag == True) and (questions_count < questions_and_answers_dict_len):
 
 result = round(true_answers_count*100/questions_count)
 
-print(F"Вот и всё, ({start_input_value})! Вы ответили на {true_answers_count} вопросов из {questions_count}. Вы заработали {scores} баллов. Это {result}%")
+print(f"Вот и всё, ({start_input_value})! Вы ответили на {true_answers_count} вопросов из {questions_count}. Вы заработали {scores} баллов. Это {result}%")
