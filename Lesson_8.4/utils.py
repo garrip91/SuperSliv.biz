@@ -5,19 +5,15 @@ from question import Question
 
 
 def load_questions():
+    """Загружает вопросы из БД."""
+
     # Настраиваем подключение к базе данных:
     conn = sqlite3.connect('DATA.db')
     # Настраиваем "курсор", с помощью которого будем обращаться к БД:
     cursor = conn.cursor()
     
-    questions = []
-    #for question_data in questions_data:
-    #    questions.append(Question(
-    #        question_data["q"],
-    #        int(question_data["d"]),
-    #        question_data["a"]
-    #    ))
     cursor.execute("SELECT id, question, level, answer FROM questions")
+    questions = []
     for line in cursor.fetchall():
         questions.append(Question(
             line[1],
@@ -30,6 +26,7 @@ def load_questions():
 
 
 def correct_answers_count(questions):
+    """Считает количество правильных ответов."""
     correct_counter = 0
     for question in questions:
         if question.is_correct():
@@ -38,6 +35,7 @@ def correct_answers_count(questions):
 
 
 def points_count(questions):
+    """Считает количество очков"""
     points_counter = 0
     for question in questions:
         if question.is_correct():
