@@ -31,11 +31,3 @@ def load_random_word():
     word = random.sample(words_and_subwords, 1)
     
     return word[0]
-
-
-#load_random_word()
-print(load_random_word())
-
-#payload = {'key1': 'value1', 'key2': 'value2'}
-#response = requests.get(WORDS_ON_GITHUB, params=payload)
-#print(response.text)
