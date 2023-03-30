@@ -18,7 +18,7 @@ def main():
         print(f"Здравствуйте, {player.name}!")
         print(f"Составьте {subwords_count} слов из слова {word.upper()}")
         
-        print(f"ПОДСКАЗКА: {word_and_subwords.sub_words}")
+        #print(f"ПОДСКАЗКА: {word_and_subwords.sub_words}")
 
         print("Слова должны быть не короче 3 букв")
         print('Чтобы закончить игру, угадайте все слова или В ПРОЦЕССЕ ИГРЫ введите слово "stop" (или "стоп") и нажмите на "Enter"')
