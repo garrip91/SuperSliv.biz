@@ -28,22 +28,3 @@ class Question:
     
     def __repr__(self):
         return f"{self.question_text} - {self.question_answer} ({self.question_level}/5)"
-
-
-# data = {
-#     "q": "How many days do we have in a week?",
-#     "d": "2",
-#     "a": "7"
-# }
-#
-# q_1 = Question(data.get("q"), int(data.get("d")), data.get("a"))
-# print(q_1.get_points())
-#
-# q_1.user_answer = data.get("a")
-# print(q_1.is_correct())
-#
-# print(q_1.build_question())
-#
-# print(q_1.build_positive_feedback())
-#
-# print(q_1.build_negative_feedback())
