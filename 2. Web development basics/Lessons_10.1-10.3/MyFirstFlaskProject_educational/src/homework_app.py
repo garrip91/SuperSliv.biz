@@ -1,6 +1,6 @@
 # Сперва импортируем Flask
 
-from flask import Flask
+from flask import Flask, jsonify
 
 # Затем создадим экземпляр этого Flask, назовём его app -
 # это будет наше приложение
@@ -32,6 +32,11 @@ def page_index():
           Навыки через запятую
         </pre>
     """
+
+@app.route("/json/")
+def get_json():
+    data = {"name": "Alice"}
+    return jsonify(data)
 
 @app.route("/candidate/<x>")
 def page_candidate(x):
