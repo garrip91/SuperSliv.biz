@@ -23,6 +23,27 @@ def page_test():
 def page_index():
     return "Главная страница"
 
+@app.route("/profile/")
+def page_profile():
+    return "Страница профиля пользователя"
+
+@app.route("/feed/")
+def page_feed():
+    return "Страница ленты пользователя"
+
+@app.route("/messages/")
+def page_messages():
+    return "Страница сообщений пользователя"
+
+
+@app.route("/users/<uid>")
+def profile(uid):
+    return f"<h1>Профиль {uid}</h1>"
+
+@app.route("/catalog/items/<itemid>")
+def profile(itemid):
+    return f"<h1>Страница товара {itemid}</h1>"
+
 # Теперь используем метод у приложения, который зарегистрирует маршрут
 # Например, для главной страницы будет вызвана функция page_index
 
