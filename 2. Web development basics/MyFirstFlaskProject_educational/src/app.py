@@ -37,11 +37,11 @@ def page_messages():
 
 
 @app.route("/users/<uid>")
-def profile(uid):
+def profile1(uid):
     return f"<h1>Профиль {uid}</h1>"
 
 @app.route("/catalog/items/<itemid>")
-def profile(itemid):
+def profile2(itemid):
     return f"<h1>Страница товара {itemid}</h1>"
 
 # Теперь используем метод у приложения, который зарегистрирует маршрут
