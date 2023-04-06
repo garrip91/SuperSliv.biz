@@ -21,7 +21,9 @@ def hello():
         "email": "ivan_dev@gmail.com",
         "telegram": "ivan_dev"
     }
-    return render_template("hello.html", user=user_data)
+    items = ["Python", "Java", "Kotlin", "Go"]
+    is_blocked = True # или is_blocked = False
+    return render_template("hello.html", user=user_data, items=items, is_blocked=is_blocked)
 
 
 app.run()
