@@ -11,4 +11,4 @@ def load_candidates():
     return candidates
 
 
-#print(load_candidates())
+#pprint(load_candidates())
