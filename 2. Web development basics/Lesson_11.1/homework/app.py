@@ -8,24 +8,24 @@ app = Flask(__name__)
 candidates = load_candidates_from_json()
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def page_list():
     return render_template("list.html", candidates=candidates.values())
 
 
-@app.route("/candidate/<int:id>/")
+@app.route("/candidate/<int:id>/", methods=["GET"])
 def page_card(id):
     candidate = get_candidate(candidate_id=id)
     return render_template("card.html", candidate=candidate)
 
 
-@app.route("/search/<candidate_name>/")
+@app.route("/search/<candidate_name>/", methods=["GET"])
 def page_search(candidate_name):
     found_candidates = get_candidates_by_name(candidate_name)
     return render_template("search.html", candidates=found_candidates)
 
 
-@app.route("/skill/<skill_name>/")
+@app.route("/skill/<skill_name>/", methods=["GET"])
 def page_skill(skill_name):
     found_candidates = get_candidates_by_skill(skill_name)
     return render_template("skill.html", skill_name=skill_name, candidates=found_candidates)
