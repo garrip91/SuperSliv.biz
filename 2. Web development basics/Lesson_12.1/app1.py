@@ -9,4 +9,4 @@ def search_page():
     return f"Вы ввели слово ***[{s}]***"
 
 
-app.run()
+app.run(debug=True)
