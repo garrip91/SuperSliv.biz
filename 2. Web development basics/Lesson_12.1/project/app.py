@@ -10,6 +10,7 @@ def form_page():
 @app.route("/search")
 def search_page():
     s = request.args["s"]
+    print(s)
     return f"Вы ввели слово ***[{s}]***"
 
 
