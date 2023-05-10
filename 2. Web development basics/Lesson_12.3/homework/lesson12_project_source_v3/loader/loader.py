@@ -1,5 +1,5 @@
 from flask import Blueprint, request, render_template
-from functions import load_posts
+from functions import load_posts, uploads_posts
 
 
 loader_blueprint = Blueprint("loader", __name__, url_prefix="/post", static_folder="static", template_folder="templates")
@@ -16,5 +16,7 @@ def upload():
     content = request.values["content"]
     posts = load_posts()
     posts.append({
-        "pic": f"",
+        "pic": f"uploads/images/{filename}",
+        "content": content
     })
+    uploads_posts(posts)
