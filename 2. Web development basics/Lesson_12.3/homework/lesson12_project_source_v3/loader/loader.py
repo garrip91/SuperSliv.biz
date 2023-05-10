@@ -11,12 +11,18 @@ def form():
 
 @loader_blueprint.route("/upload/", methods=["POST"])
 def upload():
-    file = request.files["picture"]
-    filename = file.filename
-    content = request.values["content"]
-    posts = load_posts()
-    posts.append({
-        "pic": f"uploads/images/{filename}",
-        "content": content
-    })
-    uploads_posts(posts)
+    try:
+        file = request.files["picture"]
+        filename = file.filename
+        content = request.values["content"]
+        posts = load_posts()
+        posts.append({
+            "pic": f"uploads/images/{filename}",
+            "content": content
+        })
+        uploads_posts(posts)
+        file.save(f"uploads/images/{filename}")
+    except FileNotFoundError:
+        return '<h1>Файл не найден</h1>'
+    else:
+        return render_template("post_uploaded.html")
