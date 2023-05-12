@@ -2,7 +2,7 @@ from flask import Blueprint, request, render_template
 from functions import load_posts
 
 
-main_blueprint = Blueprint("main", __name__, template_folder="templates")
+main_blueprint = Blueprint("main", __name__, url_prefix="/", template_folder="templates")
 
 
 @main_blueprint.route("/")

@@ -17,7 +17,7 @@ def upload():
         content = request.values["content"]
         posts = load_posts()
         posts.append({
-            "pic": f"uploads/images/{filename}",
+            "pic": f"/uploads/images/{filename}",
             "content": content
         })
         uploads_posts(posts)
@@ -25,4 +25,4 @@ def upload():
     except FileNotFoundError:
         return '<h1>Файл не найден</h1>'
     else:
-        return render_template("post_uploaded.html")
+        return render_template("post_uploaded.html", pic=f"/uploads/images/{filename}", content=content)
