@@ -10,4 +10,3 @@ def ticket_price(age):
         return "300 рублей"
     else:
         return "Ошибка"
-

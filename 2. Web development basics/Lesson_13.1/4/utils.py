@@ -1,6 +1,6 @@
 def ticket_price(age):
     
-    if 0 <= age < 7:
+    if 0 <= age < 7 or age >= 60:
         return "Бесплатно"
     elif 7 <= age < 18:
         return "100 рублей"
@@ -10,4 +10,3 @@ def ticket_price(age):
         return "300 рублей"
     else:
         return "Ошибка"
-
