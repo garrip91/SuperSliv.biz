@@ -11,6 +11,6 @@ import sqlite3
 #cursor.execute("ЗДЕСЬ БУДУТ НАШИ КОМАНДЫ")
 #connection.close()
 
-with sqlite3.connect("netflix.db") as connection:
+with sqlite3.connect("../netflix.db") as connection:
     cursor = connection.cursor()
     cursor.execute("ЗДЕСЬ БУДУТ НАШИ КОМАНДЫ")
