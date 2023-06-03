@@ -8,11 +8,11 @@
   </head>
   <body>
     {% for item in context %}
-      <h1>{{ item.title }}</h1>
-      <p>Страна: {{ item.country }}</p>
-      <p>Год релиза: {{ item.release_year }}</p>
-      <p>Жанр: {{ item.genre }}</p>
-      <p>Описание: {{ item.description }}</p>
+      <div>
+        <h1>{{ item.title }}</h1>
+        <p>{{ item.rating }}</p>
+        <p>{{ item.description }}</p>
+      </div>
     {% endfor %}
   </body>
 </html>

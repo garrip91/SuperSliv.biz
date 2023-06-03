@@ -25,4 +25,4 @@ with sqlite3.connect("../../../netflix.db") as connection:
         json.dump(netflix_list, file, ensure_ascii=False, indent=4)
 
 
-print(netflix_list)
+#print(netflix_list)
