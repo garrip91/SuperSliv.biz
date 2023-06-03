@@ -65,4 +65,50 @@ def load_children_movies_list():
     return netflix_list
 
 
-#print(load_children_movies_list())
+def load_family_movies_list():
+
+    with sqlite3.connect("../../../netflix.db") as connection:
+        cursor = connection.cursor()
+        query = """
+            SELECT title, rating, description
+            FROM netflix
+            WHERE rating IN ('G', 'PG', 'PG-13')
+        """
+
+        cursor.execute(query)
+
+        netflix_list = []
+        for row in cursor.fetchall():
+            netflix_dict = {}
+            netflix_dict["title"] = row[0]
+            netflix_dict["rating"] = row[1]
+            netflix_dict["description"] = row[2]
+            netflix_list.append(netflix_dict)
+    
+    return netflix_list
+
+
+def load_adult_movies_list():
+
+    with sqlite3.connect("../../../netflix.db") as connection:
+        cursor = connection.cursor()
+        query = """
+            SELECT title, rating, description
+            FROM netflix
+            WHERE rating IN ('R', 'NC-17')
+        """
+
+        cursor.execute(query)
+
+        netflix_list = []
+        for row in cursor.fetchall():
+            netflix_dict = {}
+            netflix_dict["title"] = row[0]
+            netflix_dict["rating"] = row[1]
+            netflix_dict["description"] = row[2]
+            netflix_list.append(netflix_dict)
+    
+    return netflix_list
+
+
+#print(load_adult_movies_list())
