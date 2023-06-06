@@ -111,4 +111,28 @@ def load_adult_movies_list():
     return netflix_list
 
 
-#print(load_adult_movies_list())
+def get_ten_films_by_genre(genre):
+
+    with sqlite3.connect("../../../netflix.db") as connection:
+        cursor = connection.cursor()
+        query = f"""
+            SELECT title, description
+            FROM netflix
+            WHERE listed_in LIKE '%{genre}%'
+            ORDER BY release_year DESC
+            LIMIT 10
+        """
+
+        cursor.execute(query)
+
+        netflix_list = []
+        for row in cursor.fetchall():
+            netflix_dict = {}
+            netflix_dict["title"] = row[0]
+            netflix_dict["description"] = row[1]
+            netflix_list.append(netflix_dict)
+    
+    return netflix_list
+
+
+#print(get_ten_films_by_genre("Action & Adventure"))

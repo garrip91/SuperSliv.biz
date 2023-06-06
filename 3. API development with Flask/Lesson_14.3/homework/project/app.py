@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from utils import load_needed_movie, load_children_movies_list, load_family_movies_list, load_adult_movies_list
+from utils import load_needed_movie, load_children_movies_list, load_family_movies_list, load_adult_movies_list, get_ten_films_by_genre
 from flask_paginate import Pagination, get_page_args
 
 
@@ -35,6 +35,11 @@ def family_rating_page():
 @app.route("/rating/adult/")
 def adult_rating_page():
     context = load_adult_movies_list()
+    return render_template("family.html", context=context)
+
+@app.route("/genre/<genre>/")
+def genre_page(genre):
+    context = get_ten_films_by_genre(genre)
     return render_template("family.html", context=context)
 
 
